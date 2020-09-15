@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>I saved the world today by rebooting the computer!</title>
+
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+        
+        <script src="{% static 'js/greet.js' %}"></script>
+        <script src="https://kit.fontawesome.com/9be4f98813.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    {% block content %}
+
+    {% endblock %} 
+    </body>
+</html>

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+  <header>
+      <div class="content">
+          <h2 id="title">How you can reach</h2>
+
+          <nav class="pages-tab">
+            <ul class ="nav nav-pills nav-fill">
+                <li class="nav-item "> <a class="nav-link text-muted" href="/">times I was a hero</a></li>
+                <li class="nav-item "> <a class="nav-link text-muted" href="/yousave">times you were a hero</a></li>
+                <li class="nav-item"> <a class="nav-link active bg-dark" href="/contact">contact</a></li>
+            </ul>
+        </nav>
+      </div>
+  </header>
+
+  <div class= "d-flex justify-content-start flex-column" id="main-text">
+    <h3 id="result">...and some random facts to start a conversation</h3>
+  </div>
+  <div class= "d-flex justify-content-start flex-column" id="main-text">
+    <h4>Social networks</h4>
+
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row"><a href="https://www.linkedin.com/in/cauabernardino/" class="fa fa-linkedin" type="button" role="button"></a></th>
+          <td><a href="https://www.linkedin.com/in/cauabernardino/">LinkedIn</a></td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://github.com/cauabernardino" class="fa fa-github" type="button" role="button"></a></th>
+          <td><a href="https://github.com/cauabernardino">GitHub</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><a href="https://twitter.com/cbrnrdn" class="fa fa-twitter" type="button" role="button"></a></th>
+          <td><a href="https://twitter.com/cbrnrdn">Twitter</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>I swear it's all true!</h4>
+
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>I made the first ever official try of my university's rugby team</td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>I finished Super Mario World more than 10 times</td>
+        </tr>
+
+        <tr>
+          <th scope="row">3</th>
+          <td>I am very good at remembering random songs at random times</td>
+        </tr>
+
+        <tr>
+          <th scope="row">4</th>
+          <td>Almost all programming languages that I know, I learned by myself</td>
+        </tr>
+
+        <tr>
+          <th scope="row">5</th>
+          <td>I know how to cook a very tasty pasta 😋</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+{% endblock %}

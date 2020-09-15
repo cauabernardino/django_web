@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+    <header>
+        <div class="content">
+            <h2 id="title">I saved the world by rebooting the computer</h2>
+
+                <nav class="pages-tab">
+                <ul class ="nav nav-pills nav-fill">
+                    <li class="nav-item"> <a class="nav-link active bg-dark" href="/">times I was a hero</a></li>
+                    <li class="nav-item"> <a class="nav-link text-muted" href="/yousave">times you were a hero</a></li>
+                    <li class="nav-item"> <a class="nav-link text-muted" href="/contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class= "d-flex justify-content-start flex-column" id="main-text">
+        <h3 id="result">Hello, stranger! 👋</h3>
+        <h6 id="question">What's your name?
+            <form onsubmit="greet(); return false">
+                <input type="text" id="name" size="10">
+                <input type="submit" value="Tell me" size='8'>
+            </form>
+        </h6>
+
+    </div>
+
+    <div class= "d-flex justify-content-start flex-column" id="main-text-table"> 
+        {% if times %}
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">When</th>
+                        <th scope="col">How</th>
+                        <th scope="col">Thanks to</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for time in times %}
+                    <tr>
+                        <th scope="row">{{ time.id }}</th>
+                        <td>{{ time.when }}</td>
+                        <td>{{ time.how }}</td>
+                        <td>{% for name in time.thanks.all %}{{ name }} {% endfor %}</td>
+                    </tr>
+                {% endfor %}
+               
+                </tbody>
+            </table>
+        </div>
+        {% else %} 
+        <h2>No inputs yet :(</h2>
+        {% endif %}
+    </div>
+{% endblock %}
