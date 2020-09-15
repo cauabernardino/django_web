@@ -22,14 +22,6 @@
             <form id="saves" action="{% url 'yousave' %}" method="post" class="form"  autocomplete="off">
                 {% csrf_token %}
                 {{ form.as_table }}
-                <!-- <label for="when">When did you do it?</label>
-                <input type="date" id="when" name="when" placeholder="When?" required>
-
-                <label for="how">How did you do it?</label>
-                <input type="text" id="how" name="how"  placeholder="How?" size='43' autocomplete="off" required>
-
-                <label for="thanks">Who will you thank for?</label>
-                <input type="text" id="thanks" name="thanks"  placeholder="Who?" size='17' autocomplete="off" required>-->
                 <div class="d-flex align-items-center flex-wrap">
                     <input class="btn btn-dark" id="share" type="submit" value="Share">
                 </div>
