@@ -49,7 +49,6 @@ class YouSaveView(FormView):
         return render(request, self.template_name, {'form': form})
 
 
-
 class ContactView(TemplateView):
     """
     View for Contact page
