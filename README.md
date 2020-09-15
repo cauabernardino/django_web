@@ -4,6 +4,8 @@ A web application made with Django working with a PostgreSQL database, both dock
 
 ## Remarks ✔
 
+- You should have Docker and Docker-Compose installed
+
 - Images used are:
     - python:3.8.3-alpine
     - postgres:12.0-alpine
@@ -12,7 +14,12 @@ A web application made with Django working with a PostgreSQL database, both dock
 
 ## How to run ⚙
 
-- First of all, take off the `-sample` from `.env.dev-sample` and `.env.dev.db-sample`
+- First of all, clone this repo
+    ```bash
+    git clone https://github.com/cauabernardino/django_web.git
+    ```
+
+- Take off the `-sample` from `.env.dev-sample` and `.env.dev.db-sample`
 
 - In `.env.dev` change the following environment variables.
     ```bash
