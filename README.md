@@ -6,11 +6,11 @@ A web application made with Django working with a PostgreSQL database, both dock
 
 - You should have Docker and Docker-Compose installed
 
-- Images used are:
+- Docker Images used are:
     - python:3.8.3-alpine
     - postgres:12.0-alpine
 
-- Is recommended to use the Django Admin panel to manage the database
+- It is recommended to use the Django Admin panel to manage the database
 
 ## How to run ⚙
 
@@ -64,16 +64,19 @@ A web application made with Django working with a PostgreSQL database, both dock
 
   - If you want to persist the database not flushing it every time the container runs, go to `entrypoint.sh` file in the `app` folder and comment the indicated lines
 
-- To create a super user
+- To create a superuser (admin)
 
     ```bash
     docker-compose exec web python3 manage.py createsuperuser
     ```
-    - To execute other commands it can use the same syntax
+    - To execute other commands you can use the same syntax
 
-- To access the server and the admin page
-    ```web
+- To access the server and the admin area
+    ```bash
+    # Index page
     localhost:8000
+
+    # Admin area
     localhost:8000/controlroom
     ```
 
