@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Base(models.Model):
+    """
+    Base class to improve database tracking.
+    """
     created = models.DateTimeField('Created', auto_now_add=True)
     modified = models.DateTimeField('Modified', auto_now=True)
     active = models.BooleanField('Is Active?', default=True)
@@ -11,6 +14,9 @@ class Base(models.Model):
 
 
 class Person(Base):
+    """
+    Database for people/things that are thanked.
+    """
     name = models.CharField('Name', max_length=100)
 
     class Meta:
@@ -22,6 +28,9 @@ class Person(Base):
 
 
 class TimesISaved(Base):
+    """
+    Database for the site owner share the times he saved the world.
+    """
     when = models.DateField('When?')
     how = models.TextField('How?', max_length=255)
     thanks = models.ManyToManyField(Person, verbose_name="Who I thank for")
@@ -35,6 +44,10 @@ class TimesISaved(Base):
 
 
 class TimesYouSaved(Base):
+    """
+    Database for other people to share their own glories.
+    """
+
     when = models.DateField('When?')
     how = models.TextField('How?', max_length=255)
     thanks = models.ManyToManyField(Person, verbose_name="Thanks to?")
@@ -45,4 +58,3 @@ class TimesYouSaved(Base):
     class Meta:
         verbose_name = 'Time you saved'
         verbose_name_plural = 'Times you saved'
-
