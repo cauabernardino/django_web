@@ -47,7 +47,7 @@
                         <th scope="row">{{ time.id }}</th>
                         <td>{{ time.when }}</td>
                         <td>{{ time.how }}</td>
-                        <td>{% for name in time.thanks.all %}{{ name }} {% endfor %}</td>
+                        <td>{% for name in time.thanks.all %}{{ name }}<br>{% endfor %}</td>
                     </tr>
                 {% endfor %}
                

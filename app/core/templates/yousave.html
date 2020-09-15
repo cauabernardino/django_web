@@ -16,26 +16,27 @@
         </div>
     </header>
 
-    <div class= "d-flex justify-content-start flex-column" id="main-text">
+    <div class= "d-flex justify-content flex-column center-align" id="main-text">
         <h3>Spread the story</h3>
         
-            <form id="saves" method="post" class="form" action="{% url 'yousave' %}">
+            <form id="saves" action="{% url 'yousave' %}" method="post" class="form"  autocomplete="off">
                 {% csrf_token %}
-
-                <label for="when">When did you do it?</label>
+                {{ form.as_table }}
+                <!-- <label for="when">When did you do it?</label>
                 <input type="date" id="when" name="when" placeholder="When?" required>
 
                 <label for="how">How did you do it?</label>
                 <input type="text" id="how" name="how"  placeholder="How?" size='43' autocomplete="off" required>
 
                 <label for="thanks">Who will you thank for?</label>
-                <input type="text" id="thanks" name="thanks"  placeholder="Who?" size='17' autocomplete="off" required>
-                <input type="submit" id="share" value="Share" size='10'>
-
+                <input type="text" id="thanks" name="thanks"  placeholder="Who?" size='17' autocomplete="off" required>-->
+                <div class="d-flex align-items-center flex-wrap">
+                    <input class="btn btn-dark" id="share" type="submit" value="Share">
+                </div>
             </form>
     </div>
 
-    <div class= "d-flex justify-content-start flex-column" id="main-text-table"> 
+    <div class= "d-flex justify-content-start" id="main-text-table"> 
         {% if times %}
         <div class="table-responsive">
             <table class="table table-borderless">
@@ -54,7 +55,7 @@
                         <th scope="row">{{ time.id }}</th>
                         <td>{{ time.when }}</td>
                         <td>{{ time.how }}</td>
-                        <td>{% for name in time.thanks.all %}{{ name }} {% endfor %}</td>
+                        <td>{% for name in time.thanks.all %}{{ name }}<br>{% endfor %}</td>
                     </tr>
                 {% endfor %}
                

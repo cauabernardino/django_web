@@ -1,8 +1,9 @@
-from django.views.generic import TemplateView
-from django.urls import reverse_lazy
+from django.http.response import HttpResponseRedirect
+from django.views.generic import TemplateView, FormView
+from django.shortcuts import render
+
 from .models import Person, TimesISaved, TimesYouSaved
 from .forms import TimesYouSavedModelForm
-
 
 
 class IndexView(TemplateView):
@@ -20,13 +21,12 @@ class IndexView(TemplateView):
         return context
 
 
-class YouSaveView(TemplateView):
+class YouSaveView(FormView):
     """
     View for Times You Saved page
     """
     template_name = 'yousave.html'
     form_class = TimesYouSavedModelForm
-    success_url = reverse_lazy('yousave')
 
     # Getting data from db
     def get_context_data(self, **kwargs):
@@ -35,6 +35,18 @@ class YouSaveView(TemplateView):
         context['times'] = TimesYouSaved.objects.all()
 
         return context
+    
+    def post(self, request):
+        
+        form = self.form_class(request.POST or None)
+
+        if form.is_valid():
+            
+            form.save()
+
+            return HttpResponseRedirect(self.request.path_info)
+
+        return render(request, self.template_name, {'form': form})
 
 
 

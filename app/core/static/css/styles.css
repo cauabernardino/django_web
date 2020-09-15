@@ -7,13 +7,12 @@
 
 body {
     height: 100%;
-    background-color: #7f848e;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
 }
 
 .content {
-    max-width: 1160px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 30px;
     text-align: center;
@@ -28,7 +27,7 @@ li {
 }
 
 #main-text {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 50px;
     display: flex;
@@ -52,10 +51,10 @@ li {
 }
 
 #main-text-table {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 50px;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 
@@ -73,22 +72,13 @@ li {
 #saves {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    align-items: stretch;
+    flex-flow: wrap row;
     padding-top: 10px;
     align-items: center;
     font-size: 1rem;
     border: none;
 }
-
-#saves label{
-    margin-top: 2px;
-}
-
-#saves input#share {
-    margin-top: 5px;
-}
-
-
 
 .fa {
     padding: 0;

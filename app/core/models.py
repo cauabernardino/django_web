@@ -37,7 +37,7 @@ class TimesISaved(Base):
 class TimesYouSaved(Base):
     when = models.DateField('When?')
     how = models.TextField('How?', max_length=255)
-    thanks = models.ManyToManyField('core.Person', verbose_name="Who you thank for")
+    thanks = models.ManyToManyField(Person, verbose_name="Thanks to?")
 
     def get_thanks(self):
         return ", ".join([p.name for p in self.thanks.all()])
