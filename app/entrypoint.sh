@@ -11,8 +11,10 @@ then
     echo "PostgreSQL started"
 fi
 
-# Uncomment below lines if you want to reset db every time the container is started
+# Comment below lines if you don't want to flush the db every time the container is started
 python3 manage.py flush --no-input
 python3 manage.py migrate
 
+
+# Check return
 exec "$@"
