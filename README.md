@@ -12,6 +12,10 @@ A web application made with Django working with a PostgreSQL database, both dock
 
 - It is recommended to use the Django Admin panel to manage the database
 
+- The app will use `localhost` port `8000` and conect to the PostgreSQL database through port `5432`
+    - Make sure the ports are not being used when starting the containers
+    
+
 ## How to run ⚙
 
 - First of all, clone this repo
